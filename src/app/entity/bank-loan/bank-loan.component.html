@@ -46,7 +46,7 @@
       </th>
       <th>
         <div class="calculate">
-          <button type="button" class="btn btn-dark">Calculate</button>
+          <button type="button" class="btn btn-dark" (click)="loadAll()">Calculate</button>
         </div>
       </th>
     </tr>
@@ -87,7 +87,7 @@
 <br><br><br><br><br><br>
 
 <app-data-table
-    [dataSet]=""
+    [dataSet]="allBankList"
     [columns]="displayColumns">
 </app-data-table>
 

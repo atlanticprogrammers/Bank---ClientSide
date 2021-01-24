@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ColumnMode, TableColumn } from '@swimlane/ngx-datatable';
+import { BankLoanService } from 'src/app/entity/bank-loan/bank-loan.service';
 
 @Component({
   selector: 'app-data-table',
@@ -24,9 +25,12 @@ export class DataTableComponent implements OnInit {
   @Input()
   loadingIndicator: boolean;
 
-  constructor() { }
+  constructor(private bankLoanService: BankLoanService) { }
 
   ngOnInit(): void {
+    this.bankLoanService.loadBankList.subscribe( () => {
+      this.dataSet = [...this.bankLoanService.allBankList]
+    });
   }
 
 }

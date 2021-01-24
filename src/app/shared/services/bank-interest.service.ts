@@ -16,6 +16,10 @@ export class BankInterestService {
     return this.http.get('server/api/loans/interest/' + bankCode);
   }
 
+  getAllBanks() {
+    return this.http.get('server/api/loans/interest/');
+  }
+
   saveBankWithDetails(bank: IBank) {
     const body = JSON.stringify(bank);
     return this.http.post('server/api/loans/interest', body, httpOptions);

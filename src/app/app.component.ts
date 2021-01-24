@@ -76,6 +76,15 @@ export class AppComponent implements OnInit {
         console.log(bank.detailses[1].detailsId.loanType);
       });
     */
+
+    /** Load All the
+        this.bankInterestService.getAllBanks().subscribe( i => {
+        console.log(i);
+      });
+     */
+    // this.bankInterestService.getAllBanks().subscribe( i => {
+    //   console.log(i);
+    // });
     
   }
 }
