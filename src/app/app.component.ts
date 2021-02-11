@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { BankInterestService } from './shared/services/bank-interest.service';
+import { CurrencyExchangeService } from './shared/services/currency-exchange.service';
 import { IBank, Bank } from './shared/model/bank';
 import { IDetails, Details } from './shared/model/details';
+import { ICurrencyList} from './shared/model/currency-list';
+// import { ICurrencyList} from './shared/model/currency-list';
+
 import { IDetailsId, DetailsId } from './shared/model/details-id';
 import { error } from '@angular/compiler/src/util';
+import { CurrencyExchange, ICurrencyExchange } from './shared/model/currency-exchange';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +29,12 @@ export class AppComponent implements OnInit {
 
   iBank: IBank;
 
-  constructor(private bankInterestService: BankInterestService) {}
+  iCurrencyExchange: ICurrencyExchange;
+  currencyExch: CurrencyExchange;
+  hmmmm: any;
+
+
+  constructor(private bankInterestService: BankInterestService, private currencyExchange: CurrencyExchangeService) {}
 
   ngOnInit(): void {
 
@@ -86,5 +96,27 @@ export class AppComponent implements OnInit {
     //   console.log(i);
     // });
     
+    // this.currencyExchange.getAllCurrencyNames().subscribe( (i: ICurrencyList[]) => {
+    //   i.forEach( a => {
+    //     console.log(a.currencyName);
+    //   })
+    // });
+
+    // this.currencyExchange.getAllCurrencyExchangeRatesByCurrencyType('Australian Doller').subscribe( i => {
+    //     console.log(i);
+    // });
+
+    // this.iCurrencyExchange = new CurrencyExchange('Valibal Finance','Euro',100,125);
+    // this.currencyExchange.insertNewCurrencyExchangeRate(this.iCurrencyExchange).subscribe( i => {
+    //   console.log(i);
+    // })
+
+    //  this.currencyExchange.getCurrencyExchangeRatesByCurrencyTypeAndBankName('Sampath Banka','Australian Doller').subscribe( (i: ICurrencyExchange) => {
+    //   console.log('Bfore Updating ...............');
+    //   console.log(i);
+    //   console.log('After Updating ...............');
+    //   i.sellingRate = 201;
+    //   this.currencyExchange.updateCurrencyExchange(i).subscribe( a => console.log(a));
+    // });
   }
 }

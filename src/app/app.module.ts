@@ -18,6 +18,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { CurrencyExchangeService } from './shared/services/currency-exchange.service';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
 
   ],
-  providers: [BankInterestService],
+  providers: [BankInterestService, CurrencyExchangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
